@@ -10,10 +10,10 @@ var cityIMG
 var sling
 var ground1, ground2
 var box1, box2, box3, box4, box5, box6, box7, box8, box9, box10, box11, box12, box13, box14, box15
-
+var monster
 function preload(){
-    stoneIMG=loadImage("stone.png")
-    cityIMG=loadImage("city.jpg")
+    stoneIMG=loadImage("Images/Superhero-01.png")
+    cityIMG=loadImage("Images/GamingBackground.png")
 }
 
 function setup(){
@@ -25,9 +25,7 @@ stone=Bodies.circle(380,250,40,{density:1.2})
 World.add(world,stone)
 sling=new Slingshot(this.stone,{x:440,y:145})
 ground= new Ground(600,580,1200,20)
-ground1= new Ground(250,360,20,430)
-ground2= new Ground(340,145,200,20)
-
+monster= new Monster(900,400,120,120)
 box1= new Box(650,570,70,70)
 box2= new Box(720,570,70,70)
 box3= new Box(790,570,70,70)
@@ -55,8 +53,6 @@ function draw(){
     background(cityIMG)
     Engine.update(engine)
     ground.display();
-    ground1.display();
-    ground2.display();
     box1.display();
     box2.display();
     box3.display();
@@ -73,8 +69,9 @@ function draw(){
     box14.display();
     box15.display();
     sling.display();
+    monster.display();
     imageMode(CENTER)
-    image(stoneIMG,stone.position.x,stone.position.y,40,40)
+    image(stoneIMG,stone.position.x,stone.position.y,100,100)
 
 
 
